@@ -29,7 +29,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
 }
@@ -73,7 +72,8 @@ body {
   *zoom: 1;
   color: #333333;
   background: white;
-  font: 13px Arial, Verdana, sans-serif;
+  font-size: 62.5%;
+  font-family: Arial, Verdana, sans-serif;
   line-height: 20px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -99,32 +99,32 @@ h6 {
 }
 
 h1 {
-  font-size: 25px;
+  font-size: 2.5em;
   line-height: 32px;
 }
 
 h2 {
-  font-size: 23px;
+  font-size: 2.3em;
   line-height: 30px;
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 2.1em;
   line-height: 28px;
 }
 
 h4 {
-  font-size: 19px;
+  font-size: 1.9em;
   line-height: 26px;
 }
 
 h5 {
-  font-size: 17px;
+  font-size: 1.7em;
   line-height: 24px;
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 1.5em;
   line-height: 22px;
 }
 
@@ -209,7 +209,7 @@ blockquote:before {
   position: absolute;
   top: 5px;
   left: -30px;
-  font-size: 60px;
+  font-size: 6em;
   color: #666666;
 }
 blockquote em, blockquote i, blockquote cite {
@@ -227,7 +227,7 @@ blockquote cite {
 blockquote cite:before {
   color: #666666;
   content: '\2014';
-  font-size: 13px;
+  font-size: 1.3em;
   font-style: normal;
   font-weight: bold;
   margin-right: 5px;
@@ -284,7 +284,7 @@ ins {
 
 sup,
 sub {
-  font-size: 10px;
+  font-size: 1em;
   height: 0;
   line-height: 1;
   position: relative;
@@ -305,7 +305,7 @@ mark {
 }
 
 small {
-  font-size: 80%;
+  font-size: 1.2em;
 }
 
 img {
@@ -335,7 +335,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   color: #333333;
-  font-size: 13px;
+  font-size: 1.3em;
   line-height: 20px;
   margin: 0 0 1.625em;
   width: 100%;
@@ -411,7 +411,7 @@ select {
   border: 1px solid #cccccc;
   color: #666666;
   font-family: Arial, Verdana, sans-serif;
-  font-size: 13px;
+  font-size: 1em;
   line-height: 20px;
   padding: 4px;
 }
@@ -443,7 +443,7 @@ input[type="reset"] {
   border: 1px solid #bbbbbb;
   color: #444444;
   font-family: Arial, Verdana, sans-serif;
-  font-size: 13px;
+  font-size: 1em;
   line-height: 20px;
   padding: 4px;
 }
@@ -587,7 +587,7 @@ p img,
 .gallery-caption {
   color: #666;
   font-family: Georgia, serif;
-  font-size: 12px;
+  font-size: 1.2em;
 }
 
 .wp-caption .wp-caption-text {
@@ -598,7 +598,7 @@ p img,
 .wp-caption .wp-caption-text:before {
   color: #666;
   content: '\2014';
-  font-size: 14px;
+  font-size: 1.4em;
   font-style: normal;
   font-weight: bold;
   margin-right: 5px;
@@ -640,7 +640,7 @@ p img,
   text-align: center;
 }
 .widget_calendar #wp-calendar caption {
-  font-size: 11px;
+  font-size: 1.1em;
   font-weight: 500;
   padding: 5px 0 3px 0;
   text-transform: uppercase;
@@ -729,12 +729,12 @@ p img,
 }
 
 .site-title {
-  font-size: 25px;
+  font-size: 2.5em;
   line-height: 32px;
 }
 
 .site-description {
-  font-size: 23px;
+  font-size: 2.3em;
   line-height: 30px;
   margin-bottom: 1em;
 }
@@ -756,7 +756,7 @@ p img,
 #main-navigation a {
   color: #fff;
   display: block;
-  font-size: 15px;
+  font-size: 1.5em;
   line-height: 22px;
   padding: 10px;
 }
@@ -870,10 +870,12 @@ p img,
 }
 
 .entry-meta {
+  font-size: 1.3em;
   margin-bottom: 1.625em;
 }
 
 .entry-content {
+  font-size: 1.3em;
   *zoom: 1;
 }
 .entry-content:before, .entry-content:after {
@@ -888,7 +890,7 @@ p img,
 }
 
 .sticky {
-  font-size: 100%;
+  font-size: 1.6%;
 }
 
 .entry-attachment .attachment {
@@ -954,7 +956,7 @@ textarea.error {
 .commentlist {
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 1.3em;
   line-height: 22px;
 }
 .commentlist li.comment, .commentlist li.pingback {
@@ -971,11 +973,11 @@ textarea.error {
 }
 .commentlist .comment-meta {
   color: #666;
-  font-size: 12px;
+  font-size: 1.2em;
   line-height: 15px;
 }
 .commentlist .comment-meta .fn {
-  font-size: 13px;
+  font-size: 1.3em;
   font-weight: 600;
 }
 .commentlist .comment-meta a, .commentlist .comment-meta .fn {
@@ -997,7 +999,7 @@ textarea.error {
 }
 
 .bypostauthor {
-  font-size: 100%;
+  font-size: 1.6em;
 }
 
 .required {
@@ -1005,7 +1007,7 @@ textarea.error {
 }
 
 #commentform {
-  font-size: 13px;
+  font-size: 1.3em;
   line-height: 22px;
 }
 #commentform label {
@@ -1027,6 +1029,15 @@ textarea.error {
   margin-bottom: 10px;
 }
 
+#secondary ul,
+#secondary ol,
+#secondary li,
+#secondary p,
+#secondary select,
+#secondary option {
+  font-size: 1.14em;
+}
+
 /* =Footer
 -------------------------------------------------------------- */
 #footer {
@@ -1041,6 +1052,7 @@ textarea.error {
   margin-top: 20px;
   padding: 20px 0 20px;
   text-align: center;
+  font-size: 1.3em;
 }
 
 /* =Error 404 page
