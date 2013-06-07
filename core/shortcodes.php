@@ -150,3 +150,21 @@ function odin_shortcode_label( $atts, $content = null ) {
 }
 
 add_shortcode( 'label', 'odin_shortcode_label' );
+
+/**
+ * Progress shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ *
+ * @return string          Progress HTML.
+ */
+function odin_shortcode_progress( $atts ) {
+    extract( shortcode_atts( array(
+        'class' => '',
+        'width' => '50'
+    ), $atts ) );
+
+    return '<div class="progress ' . $class . '"><div class="bar" style="width: ' . $width . '%;"></div></div>';
+}
+
+add_shortcode( 'progress', 'odin_shortcode_progress' );
