@@ -4,6 +4,9 @@ jQuery(document).ready(function($) {
     // Examples in: http://bxslider.com/
     // $('#slideshow').bxSlider();
     $('.entry-content').fitVids();
+
+    // Boostrap Shortcodes.
+    $('.odin-tooltip').tooltip();
 });
 
 

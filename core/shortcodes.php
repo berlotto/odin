@@ -50,3 +50,24 @@ function odin_shortcode_alert( $atts, $content = null ) {
 }
 
 add_shortcode( 'alert', 'odin_shortcode_alert' );
+
+/**
+ * Tooltip shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ * @param  string $content Content.
+ *
+ * @return string          Tooltip HTML.
+ */
+function odin_shortcode_tooltip( $atts, $content = null ) {
+    extract( shortcode_atts( array(
+        'href' => '#',
+        'text' => ''
+    ), $atts ) );
+
+    $html = '<a class="odin-tooltip" title="' . $text . '" href="' . $href . '" data-toggle="tooltip">' . $content . '</a>';
+
+    return $html;
+}
+
+add_shortcode( 'tooltip', 'odin_shortcode_tooltip' );
