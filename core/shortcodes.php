@@ -202,3 +202,22 @@ function odin_shortcode_icon( $atts ) {
 }
 
 add_shortcode( 'icon', 'odin_shortcode_icon' );
+
+/**
+ * QR Code shortcode.
+ * API by http://goqr.me/
+ *
+ * @param  array  $atts    Attributes.
+ *
+ * @return string          QR Code HTML.
+ */
+function odin_shortcode_qrcode( $atts ) {
+    extract( shortcode_atts( array(
+        'data' => '',
+        'size' => '150x150'
+    ), $atts ) );
+
+    return '<img src="http://api.qrserver.com/v1/create-qr-code/?data=' . rawurlencode( $data ) . '&size=' . $size . '" alt="QR Code" />';
+}
+
+add_shortcode( 'qrcode', 'odin_shortcode_qrcode' );
