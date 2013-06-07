@@ -22,7 +22,7 @@ function odin_shortcode_button( $atts, $content = null ) {
     $icon = $icon ? '<b class="' . $icon . '"></b> ' : '';
     $target = $target ? ' target="' . $target . '"' : '';
 
-    $html = '<a href="' . $href . '" class="btn ' . $class . '"' . $target . '>' . $icon . $content . '</a>';
+    $html = '<a href="' . $href . '" class="btn ' . $class . '"' . $target . '>' . $icon . do_shortcode( $content ) . '</a>';
 
     return $html;
 }
@@ -43,7 +43,7 @@ function odin_shortcode_alert( $atts, $content = null ) {
     ), $atts ) );
 
     $html = '<div class="alert ' . $class . '"><button type="button" class="close" data-dismiss="alert">&times;</button>';
-    $html .= $content;
+    $html .= do_shortcode( $content );
     $html .= '</div>';
 
     return $html;
@@ -65,7 +65,7 @@ function odin_shortcode_tooltip( $atts, $content = null ) {
         'text' => ''
     ), $atts ) );
 
-    $html = '<a class="odin-tooltip" title="' . $text . '" href="' . $href . '" data-toggle="tooltip">' . $content . '</a>';
+    $html = '<a class="odin-tooltip" title="' . $text . '" href="' . $href . '" data-toggle="tooltip">' . do_shortcode( $content ) . '</a>';
 
     return $html;
 }
@@ -111,10 +111,24 @@ function odin_shortcode_accordion_group( $atts, $content = null ) {
     $html = '<div class="accordion-group"><div class="accordion-heading">';
     $html .= '<a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $id . '" href="#' . $content_id . '">' . $title . '</a>';
     $html .= '<div id="' . $content_id . '" class="accordion-body collapse"><div class="accordion-inner">';
-    $html .= $content;
+    $html .= do_shortcode( $content );
     $html .= '</div></div></div></div>';
 
     return $html;
 }
 
 add_shortcode( 'accordion_group', 'odin_shortcode_accordion_group' );
+
+/**
+ * Dropcap shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ * @param  string $content Content.
+ *
+ * @return string          Dropcap HTML.
+ */
+function odin_shortcode_dropcap( $atts, $content = null ) {
+    return '<span class="dropcap">' . $content . '</span>';
+}
+
+add_shortcode( 'dropcap', 'odin_shortcode_dropcap' );
