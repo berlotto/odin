@@ -185,3 +185,20 @@ function odin_shortcode_well( $atts, $content = null ) {
 }
 
 add_shortcode( 'well', 'odin_shortcode_well' );
+
+/**
+ * Icon shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ *
+ * @return string          Icon HTML.
+ */
+function odin_shortcode_icon( $atts ) {
+    extract( shortcode_atts( array(
+        'class' => 'icon-search'
+    ), $atts ) );
+
+    return '<i class="' . $class . '"></i>';
+}
+
+add_shortcode( 'icon', 'odin_shortcode_icon' );
