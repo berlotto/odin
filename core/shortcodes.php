@@ -132,3 +132,21 @@ function odin_shortcode_dropcap( $atts, $content = null ) {
 }
 
 add_shortcode( 'dropcap', 'odin_shortcode_dropcap' );
+
+/**
+ * Label shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ * @param  string $content Content.
+ *
+ * @return string          Label HTML.
+ */
+function odin_shortcode_label( $atts, $content = null ) {
+    extract( shortcode_atts( array(
+        'class' => '',
+    ), $atts ) );
+
+    return '<span class="label ' . $class . '">' . do_shortcode( $content ) . '</span>';
+}
+
+add_shortcode( 'label', 'odin_shortcode_label' );
