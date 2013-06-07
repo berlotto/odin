@@ -168,3 +168,20 @@ function odin_shortcode_progress( $atts ) {
 }
 
 add_shortcode( 'progress', 'odin_shortcode_progress' );
+
+/**
+ * Well shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ *
+ * @return string          Well HTML.
+ */
+function odin_shortcode_well( $atts, $content = null ) {
+    extract( shortcode_atts( array(
+        'class' => ''
+    ), $atts ) );
+
+    return '<div class="well ' . $class . '">' . do_shortcode( $content ) . '</div>';
+}
+
+add_shortcode( 'well', 'odin_shortcode_well' );
