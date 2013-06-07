@@ -217,7 +217,7 @@ function odin_shortcode_qrcode( $atts ) {
         'size' => '150x150'
     ), $atts ) );
 
-    return '<img src="http://api.qrserver.com/v1/create-qr-code/?data=' . rawurlencode( $data ) . '&size=' . $size . '" alt="QR Code" />';
+    return '<img src="http://api.qrserver.com/v1/create-qr-code/?data=' . rawurlencode( $data ) . '&amp;size=' . $size . '" alt="QR Code" />';
 }
 
 add_shortcode( 'qrcode', 'odin_shortcode_qrcode' );
