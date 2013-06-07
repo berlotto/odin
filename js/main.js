@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
 
     // Boostrap Shortcodes.
     $('.odin-tooltip').tooltip();
+    $('.odin-accordion').collapse();
 });
 
 

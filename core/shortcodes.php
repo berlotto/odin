@@ -71,3 +71,50 @@ function odin_shortcode_tooltip( $atts, $content = null ) {
 }
 
 add_shortcode( 'tooltip', 'odin_shortcode_tooltip' );
+
+/**
+ * Accordion shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ * @param  string $content Content.
+ *
+ * @return string          Accordion HTML.
+ */
+function odin_shortcode_accordion( $atts, $content = null ) {
+    extract( shortcode_atts( array(
+        'id' => 'accordion1'
+    ), $atts ) );
+
+    $content = str_replace( array( '<br />', '<p>', '</p>' ), '', do_shortcode( $content ) );
+
+    return '<div id="' . $id . '" class="accordion">' . $content . '</div>';
+}
+
+add_shortcode( 'accordion', 'odin_shortcode_accordion' );
+
+/**
+ * Accordion shortcode.
+ *
+ * @param  array  $atts    Attributes.
+ * @param  string $content Content.
+ *
+ * @return string          Accordion HTML.
+ */
+function odin_shortcode_accordion_group( $atts, $content = null ) {
+    extract( shortcode_atts( array(
+        'title' => '',
+        'id' => 'accordion1'
+    ), $atts ) );
+
+    $content_id = sanitize_title( $title );
+
+    $html = '<div class="accordion-group"><div class="accordion-heading">';
+    $html .= '<a class="accordion-toggle" data-toggle="collapse" data-parent="#' . $id . '" href="#' . $content_id . '">' . $title . '</a>';
+    $html .= '<div id="' . $content_id . '" class="accordion-body collapse"><div class="accordion-inner">';
+    $html .= $content;
+    $html .= '</div></div></div></div>';
+
+    return $html;
+}
+
+add_shortcode( 'accordion_group', 'odin_shortcode_accordion_group' );
