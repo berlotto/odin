@@ -227,6 +227,11 @@ require_once get_template_directory() . '/inc/optimize.php';
 require_once get_template_directory() . '/inc/admin.php';
 
 /**
+ * Shortcodes.
+ */
+require_once get_template_directory() . '/core/shortcodes.php';
+
+/**
  * Socialite.
  *
  * Use in loop:
