@@ -3,6 +3,8 @@
  * Grunt Support.
  */
 define( 'ODIN_GRUNT_SUPPORT', false );
+require_once get_template_directory() . '/core/classes/class-theme-options.php';
+require_once get_template_directory() . '/core/socialite/socialite-init.php';
 
 /**
  * Sets content width.
@@ -302,3 +304,65 @@ function odin_enqueue_scripts() {
 }
 
 add_action( 'wp_enqueue_scripts', 'odin_enqueue_scripts', 1 );
+
+
+/*
+Opções do TEMA
+*/
+
+$odin_theme_options = new Odin_Theme_Options( __( 'Configurações', 'odin' ), 'configuracoes' );
+
+$odin_theme_options->set_tabs(
+    array(
+        // array(
+        //     'id' => 'odin_general', // ID da aba e nome da entrada no banco de dados.
+        //     'title' => __( 'Configurações', 'odin' ), // Título da aba.
+        // ),
+        array(
+            'id' => 'odin_social',
+            'title' => __( 'Social', 'odin' )
+        )
+    )
+);
+
+$odin_theme_options->set_fields(
+    array(
+        'general_section' => array(
+            'tab'   => 'odin_social', // Sessão da aba odin_general
+            'title' => __( 'Redes Sociais', 'odin' ),
+            'options' => array(
+                array(
+                    'id' => 'twitterid',
+                    'label' => __( 'Usuário do Twitter', 'odin' ),
+                    'type' => 'text',
+                    'default' => '',
+                    'description' => __( 'Informe somente seu ID ( http://twitter.com/<b>usuario</b> )', 'odin' )
+                ),
+                array(
+                    'id' => 'facebookid',
+                    'label' => __( 'Usuário do Facebook', 'odin' ),
+                    'type' => 'text',
+                    'default' => '',
+                    'description' => __( 'Informe somente seu ID ( http://facebook.com/<b>seu.nome</b> )', 'odin' )
+                ),
+                array(
+                    'id' => 'githubid',
+                    'label' => __( 'Usuário do Github', 'odin' ),
+                    'type' => 'text',
+                    'default' => '',
+                    'description' => __( 'Informe somente seu ID ( http://github.com/<b>usuario</b> )', 'odin' )
+                ),
+                array(
+                    'id' => 'gplusid',
+                    'label' => __( 'Usuário do Google+', 'odin' ),
+                    'type' => 'text',
+                    'default' => '',
+                    'description' => __( 'Informe somente seu ID ( https://plus.google.com/<b>xxxxxxxxxxxxxxxxxxxxx</b>/posts )', 'odin' )
+                )
+            )
+        )
+    )
+);
+
+//Altera o logo da tela de login
+odin_admin_login_logo();

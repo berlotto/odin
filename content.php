@@ -24,6 +24,6 @@
             <span class="sep"> | </span>
             <?php comments_popup_link( __( 'Comment', 'odin' ), __( '1 Comment', 'odin' ), __( '% Comments', 'odin' ) ); ?>
         <?php endif; ?>
-        <?php get_template_part( 'share' ); ?>
+        
     </footer><!-- #entry-meta -->
 </article>

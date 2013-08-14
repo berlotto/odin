@@ -23,6 +23,7 @@
                     <?php the_tags( '<span itemprop="keywords"> ' . __( 'and tagged as', 'odin' ) . ' ', ', ', '</span>' ); ?>
                 </footer><!-- .entry-meta -->
             </article>
+            <?php get_template_part( 'share' ); ?>
             <?php comments_template( '', true ); ?>
         <?php endwhile; ?>
     </div><!-- #content -->
