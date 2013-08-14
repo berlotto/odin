@@ -1,0 +1,3 @@
+[submodule "the_to"]
+	path = the_to
+	url = https://github.com/Takeatea/tea_theme_options.git
