@@ -18,23 +18,8 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> itemscope="" itemtype="http://schema.org/WebPage">
-    <div class="container">
-        <header id="header" role="banner">
-            <?php if ( is_home() ) : ?>
-                <hgroup>
-                    <h1 class="site-title"><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                    <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                </hgroup>
-            <?php else: ?>
-                <div class="site-title"><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-                <div class="site-description"><?php bloginfo( 'description' ); ?></div>
-            <?php endif ?>
 
-            <?php $header_image = get_header_image();
-            if ( ! empty( $header_image ) ) : ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>
-            <?php endif; ?>
-            <nav id="main-navigation" class="navbar" role="navigation">
+            <nav id="main-navigation" class="navbar navbar-fixed-top" role="navigation">
                 <a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'odin' ); ?>"><?php _e( 'Skip to content', 'odin' ); ?></a>
                 <div class="navbar-inner">
                     <div class="container">
@@ -49,10 +34,6 @@
 
                         */ ?>
                         <div class="nav-collapse collapse">
-                            <form method="get" class="navbar-search pull-right" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-                                <label for="navbar-search" class="assistive-text"><?php _e( 'Search:', 'odin' ); ?></label>
-                                <input type="text" class="input-large search-query" name="s" id="navbar-search" placeholder="<?php _e( 'Search:', 'odin' ); ?>" />
-                            </form>
                             <?php
                                 wp_nav_menu(
                                     array(
@@ -69,5 +50,28 @@
                     </div>
                 </div>
             </nav><!-- #main-menu -->
+
+    <div class="container">
+        <header id="header" role="banner">
+
+            <?php $header_image = get_header_image();?>
+
+            <?php
+            if ( ! empty( $header_image ) ) : ?>
+                <hgroup>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( $header_image ); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /></a>
+                </hgroup>
+            <?php else: ?>
+                <?php if ( is_home() ) : ?>
+                    <hgroup>
+                        <h1 class="site-title"><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+                    </hgroup>
+                <?php else: ?>
+                    <div class="site-title"><a href="<?php echo home_url(); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+                    <div class="site-description"><?php bloginfo( 'description' ); ?></div>
+                <?php endif ?>
+            <?php endif; ?>
+
         </header><!-- #header -->
         <div id="main" class="row">

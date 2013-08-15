@@ -93,13 +93,16 @@ html {
     overflow-y: scroll;
 }
 
+body{
+    padding-top: 40px;
+}
+
 /* =Header
 -------------------------------------------------------------- */
 
 #header {
-
     hgroup {
-
+        margin: 15px 0 15px 30px;
     }
 }
 
